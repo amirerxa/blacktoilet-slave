@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌑 BlackToiletSlave.sweeney</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; color: #fff; font-family: 'Creepster', cursive; text-align: center; }
+    header { background: linear-gradient(45deg, #1a1a1a, #000); padding: 20px; border-bottom: 3px solid #ff0040; }
+    h1 { font-size: 2.5em; color: #ff0040; text-shadow: 0 0 10px #ff0040; }
+    .status { background: #1a1a1a; padding: 15px; border: 2px solid #ff0040; border-radius: 10px; margin: 20px auto; max-width: 600px; }
+    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 30px 0; }
+    .photo { width: 220px; height: 220px; border: 4px solid #ff0040; border-radius: 15px; object-fit: cover; box-shadow: 0 0 20px #ff0040; }
+    .photo:hover { transform: scale(1.08); }
+    .label { background: #ff0040; color: #000; padding: 5px 10px; border-radius: 8px; font-weight: bold; margin-top: 5px; }
+    .dashboard { background: #1a1a1a; padding: 20px; border-radius: 15px; margin: 30px auto; max-width: 700px; border: 2px dashed #ff0040; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { padding: 12px; border: 1px solid #ff0040; }
+    th { background: #ff0040; color: #000; }
+    .live-chat { background: #111; padding: 20px; border-radius: 15px; margin: 30px auto; max-width: 600px; border: 2px solid #00ff00; }
+    .chat-box { background: #000; height: 200px; padding: 15px; border: 1px solid #00ff00; border-radius: 10px; overflow-y: auto; text-align: right; color: #00ff00; font-family: monospace; }
+    input[type="text"] { width: 78%; padding: 12px; background: #222; border: 1px solid #00ff00; color: #00ff00; border-radius: 8px; }
+    button { padding: 12px 20px; background: #ff0040; color: #fff; border: none; border-radius: 8px; }
+    button:hover { background: #ff3366; }
+    footer { margin-top: 50px; padding: 20px; background: #111; color: #666; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌑 BlackToiletSlave.sweeney</h1>
+    <p>توالت زنده‌ی شخصیِ <strong>ارباب سویینی</strong></p>
+  </header>
+
+  <div class="status">
+    <p>✅ وضعیت: آنلاین – در حال خدمت</p>
+    <p>⏰ آخرین استفاده: <span id="last-use"></span></p>
+    <p>⭐ امتیاز: <span id="score">2.8</span>/10</p>
+  </div>
+
+  <div class="gallery">
+    <div><img src="https://uploadkon.ir/uploads/8b7e09_25namio-183.jpg" class="photo"><div class="label">کفش لیسیدن</div></div>
+    <div><img src="https://uploadkon.ir/uploads/bb2c09_25namio-170.jpg" class="photo"><div class="label">توالت زنده</div></div>
+    <div><img src="https://uploadkon.ir/uploads/b83709_25i-1-1762326350512.jpeg" class="photo"><div class="label">لبخند تحقیرآمیز</div></div>
+  </div>
+
+  <div class="dashboard">
+    <h2>📊 داشبورد برده #001</h2>
+    <table>
+      <tr><th>وظیفه</th><th>وضعیت</th><th>جایزه/جریمه</th></tr>
+      <tr><td>تمیز کردن کفش</td><td>✅</td><td>+۰.۵</td></tr>
+      <tr><td>توالت زنده</td><td>✅</td><td>+۱.۰</td></tr>
+      <tr><td>عکس روزانه</td><td>⏳</td><td>۲۴ ساعت</td></tr>
+    </table>
+  </div>
+
+  <div class="live-chat">
+    <h2>💬 چت زنده</h2>
+    <div class="chat-box" id="chat">
+      <p><strong style="color:#ff0040;">ارباب سویینی:</strong> سایت رو آنلاین کن. لینک رو بفرست.</p>
+    </div>
+    <input type="text" id="message" placeholder="فقط با اجازه..." onkeydown="if(event.key==='Enter') sendMessage()">
+    <button onclick="sendMessage()">ارسال</button>
+  </div>
+
+  <footer>
+    <p>© 2025 ارباب سویینی | برده #001 متعلق به من است.</p>
+  </footer>
+
+  <script>
+    setInterval(() => {
+      document.getElementById('last-use').textContent = new Date().toLocaleTimeString('fa-IR');
+    }, 1000);
+    function sendMessage() {
+      const input = document.getElementById('message');
+      const chat = document.getElementById('chat');
+      const msg = input.value.trim();
+      if (!msg) return;
+      chat.innerHTML += `<p><strong style="color:#00ff00;">برده:</strong> ${msg}</p>`;
+      input.value = '';
+      setTimeout(() => {
+        chat.innerHTML += `<p><strong style="color:#ff0040;">ارباب:</strong> خوبه. حالا منتظر دستور بعدی باش.</p>`;
+        chat.scrollTop = chat.scrollHeight;
+      }, 1200);
+      chat.scrollTop = chat.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>
